@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx"],"version":"5.6.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/index.ts","./src/components/diagrams/index.ts","./src/components/forms/index.ts","./src/components/layout/index.ts","./src/components/ui/index.ts","./src/context/index.ts","./src/hooks/index.ts","./src/pages/index.ts","./src/services/index.ts","./src/stores/index.ts","./src/types/index.ts","./src/utils/index.ts"],"version":"5.6.3"}
