@@ -1,0 +1,30 @@
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules/
+.env
+.env.local
+
+# TaskMaster
+.taskmaster/sync.json
+.taskmaster/state.json
+.taskmaster/tasks/*.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+EOF
