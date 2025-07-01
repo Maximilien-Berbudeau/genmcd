@@ -1,0 +1,175 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 9,
+        "title": "Setup Modern React 19 Project with Vite 6",
+        "description": "Initialize the project with React 19, TypeScript 5.6+, and Vite 6 for a modern development environment.",
+        "details": "1. Use Vite 6 to create a new React project\n2. Configure TypeScript 5.6+ with strict mode\n3. Set up ESLint 9 with React 19 rules\n4. Configure Prettier 3 for code formatting\n5. Implement the project structure as outlined in the PRD\n6. Set up Tailwind CSS v4.0 with modern features\n7. Configure React DevTools 5 for debugging\n8. Implement basic routing with React Router v7\n\nCommands:\nnpm create vite@latest genmcd --template react-ts\ncd genmcd\nnpm install\nnpm install react@19 react-dom@19 typescript@5.6 @types/react@19 @types/react-dom@19\nnpm install -D eslint@9 prettier@3 tailwindcss@4.0 postcss autoprefixer\nnpx eslint --init\nnpx tailwindcss init -p",
+        "testStrategy": "1. Verify correct installation of all dependencies\n2. Run ESLint and Prettier to ensure proper configuration\n3. Test TypeScript compilation with strict mode\n4. Verify Tailwind CSS configuration\n5. Test basic component rendering with React 19 features",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Vite Project with React 19 and TypeScript 5.6+",
+            "description": "Create a new project using Vite 6 with React 19 and TypeScript 5.6+ as the foundation for the modern development environment.",
+            "dependencies": [],
+            "details": "Run the following commands in sequence:\n1. `npm create vite@latest genmcd --template react-ts` to create the project\n2. `cd genmcd` to navigate to the project directory\n3. `npm install` to install initial dependencies\n4. `npm install react@19 react-dom@19 typescript@5.6 @types/react@19 @types/react-dom@19` to update to React 19 and TypeScript 5.6+\n5. Update tsconfig.json to enable strict mode and other TypeScript configurations",
+            "status": "done",
+            "testStrategy": "Verify the project builds successfully with `npm run dev` and check that React 19 features are available"
+          },
+          {
+            "id": 2,
+            "title": "Configure ESLint 9 and Prettier 3 for Code Quality",
+            "description": "Set up ESLint with React 19 rules and Prettier for consistent code formatting across the project.",
+            "dependencies": [
+              1
+            ],
+            "details": "1. Run `npm install -D eslint@9 prettier@3` to install ESLint and Prettier\n2. Execute `npx eslint --init` and select React-specific configuration\n3. Create .eslintrc.js with React 19 specific rules\n4. Create .prettierrc with project formatting standards\n5. Add .eslintignore and .prettierignore files\n6. Configure integration between ESLint and Prettier\n7. Add lint and format scripts to package.json",
+            "status": "pending",
+            "testStrategy": "Run `npm run lint` to verify ESLint works correctly and `npm run format` to check Prettier formatting"
+          },
+          {
+            "id": 3,
+            "title": "Set up Tailwind CSS v4.0 with Modern Features",
+            "description": "Integrate and configure Tailwind CSS v4.0 for styling the application with its latest features.",
+            "dependencies": [
+              1
+            ],
+            "details": "1. Run `npm install -D tailwindcss@4.0 postcss autoprefixer` to install Tailwind CSS and its dependencies\n2. Execute `npx tailwindcss init -p` to create configuration files\n3. Configure tailwind.config.js with project-specific settings\n4. Update the content array to include all relevant files\n5. Create or modify the main CSS file to include Tailwind directives\n6. Create a theme.js file for custom Tailwind theme configuration\n7. Add example component using Tailwind classes to verify setup",
+            "status": "pending",
+            "testStrategy": "Create a simple component with Tailwind classes and verify styles are applied correctly when viewed in the browser"
+          },
+          {
+            "id": 4,
+            "title": "Implement Project Structure According to PRD",
+            "description": "Set up the folder structure and organization for the project as outlined in the PRD, creating necessary directories and placeholder files.",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "1. Create src/components directory for reusable UI components\n2. Create src/pages directory for page components\n3. Create src/hooks directory for custom React hooks\n4. Create src/utils directory for utility functions\n5. Create src/assets directory for static assets\n6. Create src/types directory for TypeScript type definitions\n7. Create src/services directory for API service functions\n8. Create src/context directory for React context providers\n9. Add index files in each directory for easier imports\n10. Create README.md with project structure documentation",
+            "status": "pending",
+            "testStrategy": "Verify all directories exist and follow the structure outlined in the PRD"
+          },
+          {
+            "id": 5,
+            "title": "Configure React Router v7 and React DevTools 5",
+            "description": "Set up client-side routing with React Router v7 and integrate React DevTools 5 for debugging the application.",
+            "dependencies": [
+              4
+            ],
+            "details": "1. Install React Router: `npm install react-router-dom@7`\n2. Create a router configuration file in src/router/index.tsx\n3. Set up basic routes for home and a sample page\n4. Implement a layout component with navigation\n5. Configure React DevTools 5 for development: `npm install -D @react-devtools/core@5`\n6. Add browser extension setup instructions in README.md\n7. Create a sample navigation component to test routing\n8. Add error boundary and 404 page handling",
+            "status": "pending",
+            "testStrategy": "Test navigation between routes and verify that React DevTools connects to the application in development mode"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Implement Modern Text Brief Submission Form",
+        "description": "Create a React 19 form for users to input database requirements with real-time validation and character counting.",
+        "details": "1. Create a new React component for the form\n2. Implement form using React 19 form actions with useActionState\n3. Add real-time character counter with Tailwind animations\n4. Implement input validation using modern browser APIs (Constraint Validation API)\n5. Ensure form components are accessible (ARIA compliant)\n6. Style the form using Tailwind CSS v4.0\n\nExample code snippet:\n```typescript\nimport { useActionState } from 'react';\n\nconst BriefForm = () => {\n  const [formState, formAction] = useActionState(async (prevState, formData) => {\n    // Form submission logic here\n  });\n\n  return (\n    <form action={formAction}>\n      <textarea\n        name=\"brief\"\n        maxLength={1000}\n        required\n        aria-label=\"Database requirements\"\n        className=\"w-full p-2 border rounded focus:ring-2 focus:ring-blue-500\"\n      />\n      {/* Character counter and submit button */}\n    </form>\n  );\n};\n```",
+        "testStrategy": "1. Unit test the form component\n2. Test real-time character counting\n3. Validate form submission with various inputs\n4. Test accessibility using automated tools and screen readers\n5. Verify responsive design on different screen sizes",
+        "priority": "high",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Integrate OpenAI API v2 for MCD Generation",
+        "description": "Implement AI-powered MCD generation using the latest OpenAI API v2 with GPT-4 Turbo and structured outputs.",
+        "details": "1. Set up OpenAI API v2 client\n2. Implement function calling for complex MCD generation\n3. Create JSON schema for MCD data validation\n4. Implement error handling with retry mechanisms\n5. Set up streaming responses for better UX\n6. Integrate with Zustand v5 for state management\n\nExample code snippet:\n```typescript\nimport { Configuration, OpenAIApi } from 'openai';\nimport { create } from 'zustand';\n\nconst configuration = new Configuration({\n  apiKey: process.env.OPENAI_API_KEY,\n});\nconst openai = new OpenAIApi(configuration);\n\nconst useMCDStore = create((set) => ({\n  mcd: null,\n  generateMCD: async (brief) => {\n    try {\n      const response = await openai.createChatCompletion({\n        model: 'gpt-4-turbo',\n        messages: [{ role: 'user', content: brief }],\n        functions: [{ name: 'generateMCD', parameters: { /* JSON schema */ } }],\n        stream: true,\n      });\n      // Process streaming response and update state\n    } catch (error) {\n      // Error handling and retry logic\n    }\n  },\n}));\n```",
+        "testStrategy": "1. Mock OpenAI API responses for testing\n2. Test error handling and retry mechanisms\n3. Verify correct parsing of structured outputs\n4. Test streaming response handling\n5. Validate integration with Zustand store",
+        "priority": "high",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Develop Interactive MCD Visualization with Mermaid v11",
+        "description": "Create an interactive MCD visualization component using Mermaid v11 with enhanced styling and responsiveness.",
+        "details": "1. Install and configure Mermaid v11\n2. Create a React component for rendering ER diagrams\n3. Implement interactive elements (zoom, pan, select)\n4. Ensure responsive design for mobile devices\n5. Implement dark/light theme support with CSS custom properties\n6. Optimize performance with React 19 concurrent features\n\nExample code snippet:\n```typescript\nimport { useEffect, useRef } from 'react';\nimport mermaid from 'mermaid';\n\nconst MCDVisualization = ({ mcdData }) => {\n  const ref = useRef(null);\n\n  useEffect(() => {\n    if (ref.current) {\n      mermaid.initialize({ startOnLoad: true, theme: 'default' });\n      mermaid.render('mcd-diagram', mcdData, (svgCode) => {\n        ref.current.innerHTML = svgCode;\n      });\n    }\n  }, [mcdData]);\n\n  return (\n    <div ref={ref} className=\"mcd-container w-full h-full overflow-auto\">\n      {/* Interactive controls */}\n    </div>\n  );\n};\n```",
+        "testStrategy": "1. Unit test the MCD visualization component\n2. Test rendering with various MCD data inputs\n3. Verify interactive features (zoom, pan, select)\n4. Test responsiveness on different screen sizes\n5. Validate theme switching functionality",
+        "priority": "high",
+        "dependencies": [
+          11
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 13,
+        "title": "Implement Secure API Key Management",
+        "description": "Develop a secure client-side API key management system using modern web security features.",
+        "details": "1. Implement encrypted localStorage using Web Crypto API\n2. Create an input component for API key with masking\n3. Develop clear security warnings and best practices UI\n4. Implement session-based key storage\n5. Set up Content Security Policy headers\n\nExample code snippet:\n```typescript\nimport { encrypt, decrypt } from './cryptoUtils';\n\nconst ApiKeyManager = () => {\n  const [apiKey, setApiKey] = useState('');\n\n  const saveApiKey = async (key: string) => {\n    const encryptedKey = await encrypt(key);\n    localStorage.setItem('encryptedApiKey', encryptedKey);\n  };\n\n  const loadApiKey = async () => {\n    const encryptedKey = localStorage.getItem('encryptedApiKey');\n    if (encryptedKey) {\n      const decryptedKey = await decrypt(encryptedKey);\n      setApiKey(decryptedKey);\n    }\n  };\n\n  // Render input and security warnings\n};\n```",
+        "testStrategy": "1. Test encryption and decryption of API keys\n2. Verify secure storage in localStorage\n3. Test input masking functionality\n4. Validate security warning displays\n5. Test session-based storage behavior",
+        "priority": "high",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Develop Freemium Usage System",
+        "description": "Implement a modern rate limiting and usage tracking system for the freemium model.",
+        "details": "1. Implement LocalStorage-based usage counter with encryption\n2. Set up progressive web app features for engagement\n3. Create a modern notification system using the Notification API\n4. Develop clear upgrade prompts with smooth animations\n5. Implement rate limiting logic\n\nExample code snippet:\n```typescript\nimport { encrypt, decrypt } from './cryptoUtils';\n\nconst UsageTracker = () => {\n  const [usageCount, setUsageCount] = useState(0);\n\n  const incrementUsage = async () => {\n    const newCount = usageCount + 1;\n    setUsageCount(newCount);\n    const encryptedCount = await encrypt(newCount.toString());\n    localStorage.setItem('encryptedUsageCount', encryptedCount);\n    if (newCount >= 5) {\n      showUpgradePrompt();\n    }\n  };\n\n  const showUpgradePrompt = () => {\n    // Use Notification API or custom modal\n  };\n\n  // Load usage count on component mount\n};\n```",
+        "testStrategy": "1. Test usage counting and encryption\n2. Verify rate limiting functionality\n3. Test notification system\n4. Validate upgrade prompt triggers\n5. Test PWA features and offline functionality",
+        "priority": "medium",
+        "dependencies": [
+          13
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Implement Advanced Export Features",
+        "description": "Develop multiple export formats for the MCD using modern web APIs.",
+        "details": "1. Implement SVG export using latest Mermaid features\n2. Develop PNG/JPEG export functionality with Canvas API\n3. Create code export feature for Mermaid syntax\n4. Implement copy to clipboard feature using modern Clipboard API\n5. Ensure exported files are properly named and formatted\n\nExample code snippet:\n```typescript\nimport { toPng, toJpeg, toSvg } from 'html-to-image';\n\nconst ExportFeatures = ({ mcdElement }) => {\n  const exportSVG = async () => {\n    const svgData = await toSvg(mcdElement);\n    downloadFile(svgData, 'mcd_diagram.svg', 'image/svg+xml');\n  };\n\n  const exportPNG = async () => {\n    const pngData = await toPng(mcdElement);\n    downloadFile(pngData, 'mcd_diagram.png', 'image/png');\n  };\n\n  const copyToClipboard = async () => {\n    const mermaidCode = generateMermaidCode(); // Implement this function\n    await navigator.clipboard.writeText(mermaidCode);\n  };\n\n  // Render export buttons\n};\n```",
+        "testStrategy": "1. Test SVG export functionality\n2. Verify PNG and JPEG export quality\n3. Test Mermaid code export accuracy\n4. Validate clipboard copy functionality\n5. Test exported file naming and formatting",
+        "priority": "medium",
+        "dependencies": [
+          12
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 16,
+        "title": "Implement Performance Optimizations and Deployment Strategy",
+        "description": "Apply performance optimizations and set up the deployment pipeline for the GenMCD MVP.",
+        "details": "1. Implement code splitting with dynamic imports\n2. Set up Mermaid lazy loading for faster initial load\n3. Implement a Service Worker for offline capabilities\n4. Configure Vercel/Netlify for modern hosting\n5. Set up environment variables for API keys\n6. Implement Progressive Web App features\n7. Set up analytics with a privacy-first approach\n8. Optimize React 19 concurrent features for smooth UX\n\nExample code snippet:\n```typescript\n// In your main App component\nimport { lazy, Suspense } from 'react';\n\nconst MCDVisualization = lazy(() => import('./components/MCDVisualization'));\n\nconst App = () => {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <MCDVisualization />\n    </Suspense>\n  );\n};\n\n// Service Worker registration\nif ('serviceWorker' in navigator) {\n  window.addEventListener('load', () => {\n    navigator.serviceWorker.register('/service-worker.js');\n  });\n}\n```",
+        "testStrategy": "1. Measure and compare load times before and after optimizations\n2. Test offline functionality with Service Worker\n3. Verify correct environment variable usage\n4. Test PWA installation and functionality\n5. Validate analytics implementation and data collection\n6. Perform end-to-end testing of the deployed application",
+        "priority": "medium",
+        "dependencies": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-01T11:57:39.261Z",
+      "updated": "2025-07-01T12:19:13.029Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

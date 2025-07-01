@@ -1,0 +1,140 @@
+GenMCD - MVP Product Requirements Document (Updated 2025)
+===========================================================
+
+## 1. PRODUCT OVERVIEW
+
+GenMCD is an automatic Conceptual Data Model (MCD) generator that transforms text descriptions into visual database models using AI.
+
+**MVP Goal**: Deliver core functionality to validate the concept with a freemium model using cutting-edge 2025 technologies.
+
+## 2. TECHNOLOGY STACK (2025 LATEST)
+
+### Frontend Core
+- **React 19** with Server Components and latest hooks (useActionState, use hook)
+- **TypeScript 5.6+** with strict type checking and latest decorators
+- **Tailwind CSS v4.0** with modern CSS features (@layer, color-mix(), @property)
+- **Vite 6** for build tooling and dev server with improved HMR
+
+### State Management
+- **Zustand v5** with immer middleware and modern patterns
+- **React Query/TanStack Query v5** for server state management
+- Modern async patterns with React 19 concurrent features
+
+### AI Integration
+- **OpenAI API v2** with latest models (GPT-4 Turbo, GPT-4o)
+- **Structured outputs** for reliable JSON responses
+- **Function calling** for complex MCD generation
+
+### Visualization
+- **Mermaid v11** with latest ER diagram features
+- **Entity Relationship diagram** syntax with enhanced styling
+- **SVG export** capabilities with modern web APIs
+
+## 3. MVP MUST-HAVE FEATURES
+
+### F-01: Modern Text Brief Submission
+**Priority**: Must Have  
+**Description**: Users input database requirements via modern React form.
+- React 19 form actions with useActionState
+- Real-time character counter with Tailwind animations
+- Input validation with modern browser APIs
+- Accessible form components (ARIA compliance)
+
+### F-02: AI-Powered MCD Generation (2025)
+**Priority**: Must Have  
+**Description**: Advanced AI processing with latest OpenAI capabilities.
+- OpenAI GPT-4 Turbo integration with structured outputs
+- JSON schema validation for MCD data
+- Error handling with retry mechanisms
+- Streaming responses for better UX
+
+### F-03: Interactive MCD Visualization
+**Priority**: Must Have  
+**Description**: Modern diagram rendering with Mermaid v11.
+- Entity Relationship diagrams with enhanced styling
+- Interactive elements (zoom, pan, select)
+- Responsive design for mobile devices
+- Dark/light theme support with CSS custom properties
+
+### F-04: Secure API Key Management
+**Priority**: Must Have  
+**Description**: Client-side API key management with modern security.
+- Encrypted localStorage with Web Crypto API
+- Input masking with modern password patterns
+- Clear security warnings and best practices
+- Session-based key storage
+
+### F-05: Freemium Usage System (2025)
+**Priority**: Must Have  
+**Description**: Modern rate limiting and usage tracking.
+- LocalStorage-based usage counter with encryption
+- Progressive web app features for engagement
+- Modern notification system with Notification API
+- Clear upgrade prompts with smooth animations
+
+### F-06: Advanced Export Features
+**Priority**: Must Have  
+**Description**: Multiple export formats with modern web APIs.
+- SVG export using latest Mermaid features
+- PNG/JPEG export with Canvas API
+- Code export (Mermaid syntax)
+- Copy to clipboard with modern Clipboard API
+
+## 4. TECHNICAL IMPLEMENTATION (2025)
+
+### Project Structure
+```
+src/
+├── components/          # React 19 components
+│   ├── ui/             # Reusable UI components
+│   ├── forms/          # Form components with useActionState
+│   └── diagrams/       # Mermaid diagram components
+├── hooks/              # Custom React 19 hooks
+├── stores/             # Zustand v5 stores
+├── services/           # API services with fetch
+├── types/              # TypeScript definitions
+└── utils/              # Utility functions
+```
+
+### Modern Development Features
+- **React DevTools 5** for debugging Server Components
+- **Tailwind CSS IntelliSense** with v4.0 features
+- **TypeScript strict mode** with latest language features
+- **ESLint 9** with React 19 rules
+- **Prettier 3** with latest formatting
+
+### Performance Optimizations
+- **React 19 concurrent features** for smooth UX
+- **Code splitting** with dynamic imports
+- **Mermaid lazy loading** for faster initial load
+- **Service Worker** for offline capabilities
+
+### Security Features
+- **Content Security Policy** headers
+- **HTTPS enforcement** in production
+- **Input sanitization** for AI prompts
+- **Rate limiting** on client-side
+
+## 5. MVP USER JOURNEY
+
+1. **Landing**: Clean interface with example MCD
+2. **Input**: Natural language database description
+3. **Processing**: Real-time AI generation with progress
+4. **Visualization**: Interactive MCD with modern UI
+5. **Export**: Multiple formats with one-click download
+
+## 6. SUCCESS METRICS
+
+- **Generation Accuracy**: >85% usable MCDs
+- **User Retention**: >40% return within 7 days
+- **Performance**: <2s generation time
+- **Mobile Experience**: Fully responsive on all devices
+
+## 7. DEPLOYMENT STRATEGY
+
+- **Vercel/Netlify** for modern hosting
+- **Environment variables** for API keys
+- **Progressive Web App** features
+- **Analytics** with privacy-first approach
+
+This MVP focuses on delivering a modern, fast, and reliable MCD generation tool using the latest 2025 web technologies. 
