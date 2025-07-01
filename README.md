@@ -33,7 +33,7 @@
 ### Development Tools
 - **ESLint 9** - Code linting with React 19 rules
 - **Prettier 3** - Code formatting
-- **React DevTools** - Development debugging
+- **React DevTools** - Development debugging (install browser extension)
 
 ## 📁 Project Structure
 
@@ -105,6 +105,27 @@ This project uses:
 - **ESLint 9** with React 19 specific rules
 - **Prettier 3** for consistent code formatting
 - **TypeScript strict mode** for type safety
+
+### React DevTools Setup
+
+For optimal debugging experience:
+
+1. **Install React DevTools browser extension:**
+   - [Chrome/Edge Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+   - [Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+2. **Usage:**
+   - Open your browser's developer tools (F12)
+   - Navigate to the "⚛️ Components" or "⚛️ Profiler" tabs
+   - Inspect React component hierarchy and state
+   - Profile React performance in real-time
+
+3. **Features available:**
+   - Component tree inspection with React 19 features
+   - Props and state viewing/editing
+   - Performance profiling
+   - Hooks debugging
+   - Time-travel debugging
 
 ## 📝 Usage
 
